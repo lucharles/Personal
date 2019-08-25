@@ -1,0 +1,56 @@
+M = 4
+CORPUS: 31 bases
+PATTERN: 29 bases
+MASK: 29 bases
+Error (insert): hash table is full!
+
+Error (insert): hash table is full!
+
+Error (insert): hash table is full!
+
+Error (insert): hash table is full!
+
+Error (insert): hash table is full!
+
+Error (insert): hash table is full!
+
+Error (insert): hash table is full!
+
+Error (insert): hash table is full!
+
+Error (insert): hash table is full!
+
+Error (insert): hash table is full!
+
+Error (insert): hash table is full!
+
+Error (insert): hash table is full!
+
+Error (insert): hash table is full!
+
+Error (insert): hash table is full!
+
+Error (insert): hash table is full!
+
+Error (insert): hash table is full!
+
+Error (insert): hash table is full!
+
+Error (insert): hash table is full!
+
+Error (insert): hash table is full!
+
+Error (insert): hash table is full!
+
+Error (insert): hash table is full!
+
+Error (insert): hash table is full!
+
+Error (insert): hash table is full!
+
+Error (insert): hash table is full!
+
+Error (insert): hash table is full!
+
+Error (insert): hash table is full!
+
