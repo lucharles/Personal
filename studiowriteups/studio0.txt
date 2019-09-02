@@ -4,7 +4,7 @@ Students in your studio group:
 
     Name        WUSTLKey (e.g. "a.bear")
 	
-1.
+1. Charles Lu  lucharles
 2.
 3.
 4.
@@ -14,29 +14,33 @@ Students in your studio group:
 Below each question, type in your short, to-the-point answers.
 
 Question PS1: 
+Ticks is many of scales of magnitude greater than time. And the time curve is not as smooth as the Ticks curve. This may be
+ because there is a larger total number of ticks, so any small random variation in Ticks would not be as noticeable as one in time.
 
 Question PS2:
+In linear, some of the times were so small they could not
+ be measured, so they are thought to be zero, which would severely impact the plot, making its shape not very linear.
 	
 Question PS3: 
-	
+	Values plotted.
 Question PS4: 
-		
+	N^2
 Question PS5: 
-	
+	Both values and curve would change.
 Question A1:
-	
+	I see a flat line. The upperbound inside the for loop is a constant, so its runtime is independent of n. It does not matter.
 Question A2:
-	
+	The ticks to allocate an array are constant and is independent of the size of the array. The time is linear, and roughly dependent on time.
 Question A3:
-	
+	No. The ticks were constant, but the time was linear with respect to N. The tick call is constant, but the allocation of the array code is variable with N.
 Question A4:
-
+	They are more similar to each other. N decides how much time it takes to allocate an array, not ticks. Creating the space for the object in system memory.
 Question A5:
-
+	The decimal team. Tally mark = N, Decimal = number of digits of N.. X=10.
 Question A6:
-
+	The ratio of strokes in decimal vs strokes in binary would be log10/log2, or roughly 3.33.
 Question A7:
-	
+	Choosing between either option vs unary, as unary is much slower than binary and decimal.
 Question C1:
 
 Question C2:

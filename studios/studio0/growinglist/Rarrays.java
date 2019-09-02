@@ -61,7 +61,15 @@ abstract public class Rarrays extends QuietAlgorithm {
 		//    class that you run.
 		//
 		int newSize = getNewSize();
+		int [] cake = new int[newSize];
+		ticker.tick();
+		for( int i=0; i<this.array.length; i++) {
+			cake[i] = this.array[i];
+			ticker.tick();
+		}
+		this.array = cake;
 		//
+		
 		//  Make a new array of the new size
 		//       This should be a local variable, not an instance variable
 		//
