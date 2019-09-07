@@ -4,7 +4,7 @@ Students in your studio group:
 
     Name        WUSTLKey (e.g. "a.bear")
 	
-1.
+1. Charles Lu
 2.
 3.
 4.
@@ -16,25 +16,25 @@ Below each question, type in your short, to-the-point answers.
 Question A1:
 
 - ProbA
-
+=n
 - ProbB
-
+=N(N-1)/2
 - ProbC
-
+=N(N+1)/2
 - ProbD
-
+=N(N+1)(2N+1)/6
 - ProbE
-
+=(N(N+1)(2N+1)/6)-N
 Question B1:
 
-1.  c =         n0 =
-2.  c =         n0 =
-3.  c =         n0 =
+1.  c =  4       n0 = 1
+2.  c =  1000    n0 = 1
+3.  c =  4       n0 = 1
 
 Question C1:
 
-1.
-2.
+1. 5000 = O(n^2)
+2. an+b = O(n)
 
 Question D1:
 
