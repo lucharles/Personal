@@ -4,7 +4,7 @@ Students in your studio group:
 
     Name        WUSTLKey (e.g. "a.bear")
 	
-1.
+1.  Charles Lu   lucharles
 2.
 3.
 4.
@@ -14,15 +14,15 @@ Students in your studio group:
 Below each question, type in your short, to-the-point answers.
 
 Question A1:
-
+Polynomial
 Question A2:
-
+Polynomial
 Question B1:
-
+It becomes linear. Because now it just jumps to the end of the list
 Question B2:
-
+It takes space n, constant storage + 1 list node.
 Question B3:
-
+It is worthwhile for large values. For small values it is not.
 Question C1:
 
 Question C2:
