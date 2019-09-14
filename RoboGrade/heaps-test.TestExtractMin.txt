@@ -1,0 +1,23 @@
+-------------------
+CSE247 Robot tester starts testing heaps on 2019-09-14 02:58:29 -0500
+
+========
+Testing in ./GradingRepos/repos/labs-lucharles: heaps as of 2019-09-14 00:05
+========
+Now in: /mnt/c/Users/coles/git/cse247-support-f19/GradingRepos/repos/labs-lucharles
+Your branch is up to date with 'origin/master'.
+HEAD is now at 301488d m
+No local changes to save
+
+Already up to date.
+Going back in time to: 2019-09-14 00:05
+At hash 301488de3154490160c0645335a57e99f7f62f73
+
+Running test for passcode...
+Lab 1 passcode: cse247f19lab1
+================
+Lab is counted as working
+================
+
+CSE247 Robot tester ends testing heaps on 2019-09-14 02:58:32 -0500
+-------------------
