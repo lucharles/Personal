@@ -4,7 +4,7 @@ Students in your studio group:
 
     Name        WUSTLKey (e.g. "a.bear")
 	
-1.
+1.  Charles Lu    lucharles
 2.
 3.
 4.
@@ -14,13 +14,17 @@ Students in your studio group:
 Below each question, type in your short, to-the-point answers.
 
 Question A1:
-
+int, string, double
 Question A2:
-
+1) -1  2) 1   3) 31  4) 0 
 Question A3:
-
+We looked at the Calendar object. It would return the value 0 if the time represented by the argument is equal to the time 
+represented by this Calendar; a value less than 0 if the time of this Calendar is before the time represented by the argument; 
+and a value greater than 0 if the time of this Calendar is after the time represented by the argument.
 Question B1:
-
+1. theta(1)
+2. theta(1)
+3. theta(n)
 Question B2:
 
 Question B3:
