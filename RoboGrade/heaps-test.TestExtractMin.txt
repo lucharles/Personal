@@ -1,5 +1,5 @@
 -------------------
-CSE247 Robot tester starts testing heaps on 2019-09-14 02:58:29 -0500
+CSE247 Robot tester starts testing heaps on 2019-09-21 21:36:40 -0500
 
 ========
 Testing in ./GradingRepos/repos/labs-lucharles: heaps as of 2019-09-14 00:05
@@ -9,7 +9,15 @@ Your branch is up to date with 'origin/master'.
 HEAD is now at 301488d m
 No local changes to save
 
-Already up to date.
+Updating 301488d..9372b17
+Fast-forward
+ RoboGrade/heaps-test.TestExtractMin.txt | 23 +++++++++++++++++++++++
+ studios/studio3/UnorderedList.java      | 27 ++++++++++++++++++---------
+ studios/studio3/studio3.java            | 13 +++++++++++++
+ studiowriteups/studio3.txt              | 14 +++++++++-----
+ 4 files changed, 63 insertions(+), 14 deletions(-)
+ create mode 100644 RoboGrade/heaps-test.TestExtractMin.txt
+ create mode 100644 studios/studio3/studio3.java
 Going back in time to: 2019-09-14 00:05
 At hash 301488de3154490160c0645335a57e99f7f62f73
 
@@ -19,5 +27,5 @@ Lab 1 passcode: cse247f19lab1
 Lab is counted as working
 ================
 
-CSE247 Robot tester ends testing heaps on 2019-09-14 02:58:32 -0500
+CSE247 Robot tester ends testing heaps on 2019-09-21 21:36:47 -0500
 -------------------
