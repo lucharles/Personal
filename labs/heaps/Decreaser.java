@@ -6,7 +6,7 @@ package heaps;
  * @author roncytron
  *
  * @param <T>
- */
+ */ 
 public class Decreaser<T extends Comparable<T>> {
 	
 	private T thing;

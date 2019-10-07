@@ -46,6 +46,7 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 	 *   decrease(int loc) when necessary.
 	 */
 	public Decreaser<T> insert(T thing) {
+		ticker.tick(5);
 		//
 		// Below we create the "handle" through which the value of
 		//    the contained item can be decreased.
@@ -66,7 +67,21 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 		//
 		// FIXME
 		//
+		array[size] = ans;
+		array[size].loc = size;
+		decrease(size);
 		return ans;
+	}
+	public void swap(int thing1, int thing2){
+		//swap values
+		Decreaser<T> IHateThisLab = array[thing1];
+		array[thing1] = array[thing2];
+		array[thing2] = IHateThisLab;
+		//swap location
+		int gah = array[thing2].loc;
+		array[thing2].loc = array[thing1].loc;
+		array[thing1].loc = gah;
+		ticker.tick(6);
 	}
 
 	/**
@@ -99,6 +114,21 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 		//
 		// As described in lecture
 		//
+		if (loc == 1){
+			ticker.tick(2);
+			return;
+		}
+		// the above code took me 20 minutes to figure out why I needed it. This was not appreciated.
+		T parent = array[loc].getValue();
+		T child = array[(loc/2)].getValue();
+		ticker.tick(2);
+		if(parent.compareTo(child)<0){
+			swap(loc,loc/2);
+			decrease(loc/2);
+			//heapify(1);
+			ticker.tick(4);
+		}
+		
 		
 	}
 	
@@ -110,6 +140,7 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 	 *    maintained at the root node (index 1 into the array).
 	 */
 	public T extractMin() {
+		ticker.tick(6);
 		T ans = array[1].getValue();
 		//
 		// There is effectively a hole at the root, at location 1 now.
@@ -119,9 +150,19 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 		//
 		// FIXME
 		//
+		array[1] = array[size];
+		array[1].loc = 1;
+		array[size] = null;
+		this.size = this.size - 1;
+		
+		if(size > 1){
+			heapify(1);
+			ticker.tick(2);
+		}
 		return ans;
 	}
-
+	
+	
 	/**
 	 * As described in lecture, this method looks at a parent and its two 
 	 *   children, imposing the heap property on them by perhaps swapping
@@ -134,6 +175,71 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 		// As described in lecture
 		//  FIXME
 		//
+		int min = where;
+		int left = where*2;
+		int right = where*2+1;
+		if (min > size || left > size || array[left] == null|| array[min] == null){
+			ticker.tick(2);
+			return;
+		}
+		
+		if (right > size || array[right] ==null) {
+			if((array[left].getValue().compareTo((array[min]).getValue())<0)){
+				swap(left, min);
+				ticker.tick(3);
+			}
+			return;
+		}
+		
+		T min1 = array[min].getValue();
+		T left1 = array[left].getValue();
+		T right1 = array[right].getValue();
+		if(array[left] != null && array[right] != null){
+			if (left1.compareTo(min1)<0 && left1.compareTo(right1)<0){
+				swap(min, left);
+				heapify(left);
+				ticker.tick(3);
+			}
+			else if(right1.compareTo(min1)<0) {
+				swap(min, right);
+				heapify(right);
+				ticker.tick(3);
+			}
+			ticker.tick(1);
+		}
+		else{
+			ticker.tick(1);
+			return;
+		}
+
+		/*
+		
+		
+		if (min.compareTo(left)>0 ||min.compareTo(right)>0) {
+			if(left.compareTo(right)<0) {
+				int a = array[where].loc;
+				Decreaser<T> c = array[where];
+				array[where].loc = array[where*2].loc;
+				array[where] = array[where*2];
+				array[where*2].loc = a;
+				array[where*2] = c;
+				int b = array[where].loc;
+				heapify(b);
+		}
+			if(right.compareTo(left)<0) {
+				int a = array[where].loc;
+				Decreaser<T> c = array[where];
+				array[where].loc = array[where*2+1].loc;
+				array[where] = array[where*2+1];
+				array[where*2+1].loc = a;
+				array[where*2+1] = c;
+				int b = array[where].loc;
+				heapify(b);
+		}
+
+	}
+*/
+		
 	}
 	
 	/**
@@ -213,7 +319,7 @@ public class MinHeap<T extends Comparable<T>> implements PriorityQueue<T> {
 			h.insert(r.nextInt(1000));
 			v.check();
 			System.out.println(HeapToStrings.toTree(h));
-			//System.out.println("heap is " + h);
+			System.out.println("heap is " + h);
 		}
 		while (!h.isEmpty()) {
 			int next = h.extractMin();

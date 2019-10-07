@@ -35,7 +35,7 @@ public class MinHeapValidator<K extends Comparable<K>> {
 			String oops = "\nTree before the problem occurred:\n";
 			oops += before + "\n";
 			oops += "What went wrong: " + t.getMessage() + "\n";
-			// System.out.println("Its stack trace is ");
+			System.out.println("Its stack trace is ");
 			// t.printStackTrace();
 			oops += "Tree that triggered this problem:" + "\n";
 			oops += HeapToStrings.toTree(pq);
