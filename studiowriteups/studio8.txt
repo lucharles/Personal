@@ -4,7 +4,7 @@ Students in your studio group:
 
     Name        WUSTLKey (e.g. "a.bear")
 	
-1.
+1. Charles Lu	lucharles
 2.
 3.
 4.
@@ -18,27 +18,27 @@ Question A1:
 Question A2:
 
 Question A3:
-
+hash function" x+y = hash code -- maps to a 32 bit integer
 Question A4:
-
+No. Two point objects (3,4) and (3,4)
 Question A5:
-
+0. No. Everything is in the same bucket
 Question B1:
-
+32 bit= 4 8 bit values.
 Question B2:
-
+Yes.This Hash is collision free.
 Question B3:
-
+About the same. The difference is about 70.
 Question B4:
 
 Question C1:
-
+It's not uniform
 Question C2:
 
 Question C3:
 
 Question D1:
-
+32-k lower bits
 Question D2:
 
 Question D3:
