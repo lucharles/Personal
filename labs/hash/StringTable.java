@@ -18,7 +18,10 @@ public class StringTable {
     //
     public int size;
     
-    
+    Record[] Table = new Record[nBuckets];
+    double minLoadFactor = .75;
+	double loadFactor = 0;
+	int powerOfListSize = 1;
     //
     // Create an empty table with nBuckets buckets
     //
@@ -27,8 +30,11 @@ public class StringTable {
     {
     	this.nBuckets = nBuckets;
     	buckets = new LinkedList[nBuckets];
-	
+    	for (int i = 0; i < nBuckets; i++){ //fills table with empty slots
+			buckets[i] = new LinkedList<Record>();
+		}
     	// TODO - fill in the rest of this method to initialize your table
+    	
     }
     
     
@@ -41,9 +47,18 @@ public class StringTable {
      */
     public boolean insert(Record r) 
     {  
+    	int hash = stringToHashCode(r.key); 
+    	int a = toIndex(hash);
+    	for (int i =0; i<buckets[a].size(); i++) {
+    		if (find(r.key) == null) {
+    			buckets[a].add(r);
+    			return true;
+    		}
+    			
+    	}
     	// TODO - implement this method
-	
     	return false;
+    	
     }
     
     
@@ -55,6 +70,7 @@ public class StringTable {
      */
     public Record find(String key) 
     {
+    	
     	// TODO - implement this method
 	
     	return null;
@@ -69,6 +85,13 @@ public class StringTable {
      */
     public void remove(String key) 
     {
+    	int hash = stringToHashCode(key);
+    	int a = toIndex(hash);
+    	for (int i =0; i<buckets[a].size(); i++) {
+    		if (find(key) != null) {
+    			buckets[a].remove(i);
+    		}
+    	}
     	// TODO - implement this method
     }
     
@@ -89,7 +112,8 @@ public class StringTable {
     private int toIndex(int hashcode)
     {
     	// Fill in your own hash function here
-	
+    	double num = (Math.sqrt(5)-1)/2;
+    	int index = (int) (hashcode* (num - (int)num));
     	return 0;
     }
     
