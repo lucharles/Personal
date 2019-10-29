@@ -17,17 +17,14 @@ public class StringTable {
     // must be maintained by all operations
     //
     public int size;
-    
     Record[] Table = new Record[nBuckets];
-    double minLoadFactor = .75;
-	double loadFactor = 0;
-	int powerOfListSize = 1;
     //
     // Create an empty table with nBuckets buckets
     //
     @SuppressWarnings("unchecked")
 	public StringTable(int nBuckets)
     {
+    	this.size = 0;
     	this.nBuckets = nBuckets;
     	buckets = new LinkedList[nBuckets];
     	for (int i = 0; i < nBuckets; i++){ //fills table with empty slots
@@ -48,13 +45,12 @@ public class StringTable {
     public boolean insert(Record r) 
     {  
     	int hash = stringToHashCode(r.key); 
+    	hash = Math.abs(hash);
     	int a = toIndex(hash);
-    	for (int i =0; i<buckets[a].size(); i++) {
-    		if (find(r.key) == null) {
+    	if (find(r.key) == null) {
     			buckets[a].add(r);
-    			return true;
-    		}
-    			
+    			size++;
+    			return true;	
     	}
     	// TODO - implement this method
     	return false;
@@ -70,9 +66,16 @@ public class StringTable {
      */
     public Record find(String key) 
     {
-    	
-    	// TODO - implement this method
-	
+    	int hash = stringToHashCode(key);
+    	hash = Math.abs(hash);
+    	int a = toIndex(hash);
+    	for (Record r: buckets[a]) {
+    		if (r.key.equals(key)) {
+    			return r;
+    		}
+    		
+    				
+    	}
     	return null;
     }
     
@@ -86,10 +89,13 @@ public class StringTable {
     public void remove(String key) 
     {
     	int hash = stringToHashCode(key);
+    	hash = Math.abs(hash);
     	int a = toIndex(hash);
-    	for (int i =0; i<buckets[a].size(); i++) {
-    		if (find(key) != null) {
-    			buckets[a].remove(i);
+    	for (Record r: buckets[a]) {
+    		if (r.key.equals(key)) {
+    			buckets[a].remove(r);
+    			size--;
+    			return;
     		}
     	}
     	// TODO - implement this method
@@ -113,8 +119,8 @@ public class StringTable {
     {
     	// Fill in your own hash function here
     	double num = (Math.sqrt(5)-1)/2;
-    	int index = (int) (hashcode* (num - (int)num));
-    	return 0;
+    	int index = (int) ((num*hashcode%1)*nBuckets);
+    	return Math.abs(index);
     }
     
     
