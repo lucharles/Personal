@@ -43,9 +43,7 @@ public class StringTable {
      */
     public boolean insert(Record r) 
     {  
-    	int hash = stringToHashCode(r.key); 
-    	hash = Math.abs(hash);
-    	int a = toIndex(hash);
+    	int a = toIndex(Math.abs(stringToHashCode(r.key)));
     	if (find(r.key) == null) {
     			buckets[a].add(r);
     			size++;
@@ -65,9 +63,7 @@ public class StringTable {
      */
     public Record find(String key) 
     {
-    	int hash = stringToHashCode(key);
-    	hash = Math.abs(hash);
-    	int a = toIndex(hash);
+    	int a = toIndex(Math.abs(stringToHashCode(key)));
     	for (Record r: buckets[a]) {
     		if (r.key.equals(key)) {
     			return r;
@@ -87,9 +83,7 @@ public class StringTable {
      */
     public void remove(String key) 
     {
-    	int hash = stringToHashCode(key);
-    	hash = Math.abs(hash);
-    	int a = toIndex(hash);
+    	int a = toIndex(Math.abs(stringToHashCode(key)));
     	for (Record r: buckets[a]) {
     		if (r.key.equals(key)) {
     			buckets[a].remove(r);
