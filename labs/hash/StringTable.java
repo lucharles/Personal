@@ -17,7 +17,6 @@ public class StringTable {
     // must be maintained by all operations
     //
     public int size;
-    Record[] Table = new Record[nBuckets];
     //
     // Create an empty table with nBuckets buckets
     //
