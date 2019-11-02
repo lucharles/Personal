@@ -4,7 +4,7 @@ Students in your studio group:
 
     Name        WUSTLKey (e.g. "a.bear")
 	
-1.
+1.  Charles Lu	lucharles
 2.
 3.
 4.
@@ -14,19 +14,19 @@ Students in your studio group:
 Below each question, type in your short, to-the-point answers.
 
 Question A1:
-
+The last character determines the the least significant bits, since it is directly added on.
 Question A2:
-
+4 strings. Each string is 7 bits. 4 Strings would be 28 bits <32, so no overflow would occur.
 Question A3:
-
+128^3*s0+128^2*s1+128*s2+s3
 Question B1:
-
+621%8 = (27%8*23%8)%8
 Question B2:
-
+(S0+S1+S2+S3)%127
 Question B3:
-
+any combination of a b c d 
 Question B4:
-
+(224-4*31)-1 C (4-1)
 Question B5:
 
 Question B6:
