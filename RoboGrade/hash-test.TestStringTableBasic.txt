@@ -1,0 +1,83 @@
+-------------------
+CSE247 Robot tester starts testing hash on 2019-11-11 01:27:27 -0600
+
+========
+Testing in ./GradingRepos/repos/labs-lucharles: hash as of 2019-11-02 00:05
+========
+Now in: /home/coles/git/cse247/cse247-support-f19/GradingRepos/repos/labs-lucharles
+Your branch is up-to-date with 'origin/master'.
+HEAD is now at a3f9ec2 robograde
+No local changes to save
+
+Updating a3f9ec2..dc5c710
+Fast-forward
+ RoboGrade/heaps-test.TestMinHeap.txt |   1127 +
+ labs/hash/StringTable.java           |     39 +-
+ labs/hash/output/case1-observed.txt  |     70 +-
+ labs/hash/output/case2-observed.txt  |   3426 +-
+ labs/hash/output/case3-observed.txt  | 324498 +-------------------------------
+ labs/hash/output/case4-observed.txt  | 298156 +----------------------------
+ studiowriteups/studio8.txt           |     18 +-
+ studiowriteups/studio9.txt           |     16 +-
+ 8 files changed, 1304 insertions(+), 626046 deletions(-)
+ create mode 100644 RoboGrade/heaps-test.TestMinHeap.txt
+Going back in time to: 2019-11-02 00:05
+At hash dc5c71045e0e2af74ccd7805cd0cb83039d07416
+
+Buildfile: /home/coles/git/cse247/cse247-support-f19/build.xml
+
+copytest:
+     [echo] would copy from /home/coles/git/cse247/cse247-f19-graders/ key lucharles testfilesource test/TestStringTableBasic package hash repo ./GradingRepos/repos/labs-lucharles
+     [copy] Copying 1 file to /home/coles/git/cse247/cse247-support-f19/GradingRepos/repos/labs-lucharles/labs/hash/test
+
+BUILD SUCCESSFUL
+Total time: 1 second
+Buildfile: /home/coles/git/cse247/cse247-support-f19/build.xml
+
+copytest:
+     [echo] would copy from /home/coles/git/cse247/cse247-f19-graders/ key lucharles testfilesource SeqReader package hash repo ./GradingRepos/repos/labs-lucharles
+     [copy] Copying 1 file to /home/coles/git/cse247/cse247-support-f19/GradingRepos/repos/labs-lucharles/labs/hash
+
+BUILD SUCCESSFUL
+Total time: 1 second
+Compiling the code
+Buildfile: /home/coles/git/cse247/cse247-support-f19/build.xml
+
+compile:
+     [echo] Compiling hash/StringTable
+    [javac] Compiling 1 source file to /home/coles/git/cse247/cse247-support-f19/GradingRepos/repos/labs-lucharles/bin
+
+BUILD SUCCESSFUL
+Total time: 3 seconds
+Buildfile: /home/coles/git/cse247/cse247-support-f19/build.xml
+
+compile:
+     [echo] Compiling hash/test/TestStringTableBasic
+    [javac] Compiling 1 source file to /home/coles/git/cse247/cse247-support-f19/GradingRepos/repos/labs-lucharles/bin
+
+BUILD SUCCESSFUL
+Total time: 3 seconds
+Running test test.TestStringTableBasic
+Buildfile: /home/coles/git/cse247/cse247-support-f19/build.xml
+
+test:
+    [junit] Running hash.test.TestStringTableBasic
+    [junit] Testsuite: hash.test.TestStringTableBasic
+    [junit] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.213 sec
+    [junit] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.213 sec
+    [junit] 
+    [junit] Testcase: testFind took 0.115 sec
+    [junit] Testcase: testInit took 0 sec
+    [junit] Testcase: testDelete took 0.016 sec
+    [junit] Testcase: testZeroHash took 0.008 sec
+    [junit] Testcase: testInsert took 0.003 sec
+
+BUILD SUCCESSFUL
+Total time: 2 seconds
+
+================
+Lab is counted as working
+================
+
+CSE247 Robot tester ends testing hash on 2019-11-11 01:27:43 -0600
+-------------------
