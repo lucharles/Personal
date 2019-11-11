@@ -1,19 +1,15 @@
 -------------------
-CSE247 Robot tester starts testing hash on 2019-11-11 04:27:33 -0600
+CSE247 Robot tester starts testing hash on 2019-11-11 07:21:29 -0600
 
 ========
 Testing in ./GradingRepos/repos/labs-lucharles: hash as of 2019-11-02 00:05
 ========
 Now in: /home/coles/git/cse247/cse247-support-f19/GradingRepos/repos/labs-lucharles
 Your branch is up-to-date with 'origin/master'.
-HEAD is now at dc5c710 w
+HEAD is now at 01dadc3 robograde
 No local changes to save
 
-Updating dc5c710..093fd90
-Fast-forward
- RoboGrade/hash-test.TestStringTableBasic.txt | 83 ++++++++++++++++++++++++++++
- 1 file changed, 83 insertions(+)
- create mode 100644 RoboGrade/hash-test.TestStringTableBasic.txt
+Already up-to-date.
 Going back in time to: 2019-11-02 00:05
 At hash dc5c71045e0e2af74ccd7805cd0cb83039d07416
 
@@ -70,7 +66,7 @@ test:
     [junit] Testing DNA test case 4
     [junit] Observed output for case4 matches expected output!
     [junit] 
-    [junit] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.924 sec
+    [junit] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.102 sec
     [junit] Output:
     [junit] Testing DNA test case 1
     [junit] Observed output for case1 matches expected output!
@@ -85,7 +81,7 @@ test:
     [junit] Observed output for case4 matches expected output!
     [junit] 
     [junit] 
-    [junit] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.924 sec
+    [junit] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.102 sec
     [junit] ------------- Standard Output ---------------
     [junit] Testing DNA test case 1
     [junit] Observed output for case1 matches expected output!
@@ -101,14 +97,14 @@ test:
     [junit] 
     [junit] ------------- ---------------- ---------------
     [junit] 
-    [junit] Testcase: testDNA1 took 1.764 sec
-    [junit] Testcase: testDNA2 took 0.144 sec
-    [junit] Testcase: testDNA3 took 1.057 sec
-    [junit] Testcase: testDNA4 took 1.864 sec
+    [junit] Testcase: testDNA1 took 1.912 sec
+    [junit] Testcase: testDNA2 took 0.125 sec
+    [junit] Testcase: testDNA3 took 1.166 sec
+    [junit] Testcase: testDNA4 took 1.775 sec
     [junit] Testcase: testFind took 0.024 sec
-    [junit] Testcase: testInit took 0 sec
-    [junit] Testcase: testDelete took 0.002 sec
-    [junit] Testcase: testZeroHash took 0.002 sec
+    [junit] Testcase: testInit took 0.001 sec
+    [junit] Testcase: testDelete took 0.004 sec
+    [junit] Testcase: testZeroHash took 0.003 sec
     [junit] Testcase: testInsert took 0.003 sec
 
 BUILD SUCCESSFUL
@@ -118,5 +114,5 @@ Total time: 7 seconds
 Lab is counted as working
 ================
 
-CSE247 Robot tester ends testing hash on 2019-11-11 04:27:53 -0600
+CSE247 Robot tester ends testing hash on 2019-11-11 07:21:50 -0600
 -------------------
