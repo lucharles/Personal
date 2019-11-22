@@ -144,8 +144,9 @@ public class AVLTree<T extends Comparable<T>> {
 	    		// still looking -- go right
 	    		root.setRight(insertHelper(value, root.right));
 	    	}
-	    
-	    	return root;
+	    	updateHeight(root);
+	    	
+	    	return rebalance(root);
 	    }
 	}
 
@@ -201,8 +202,9 @@ public class AVLTree<T extends Comparable<T>> {
 	    		// still looking for element to remove -- go right
 	    		root.setRight(removeHelper(value, root.right));
 	    	}
+	    	updateHeight(root);
 	    	
-	    	return root;
+	    	return rebalance(root);
 	    }
 	}
 
@@ -221,7 +223,18 @@ public class AVLTree<T extends Comparable<T>> {
 	// EFFECT: Set the root's height field to the updated value
 	//
 	private void updateHeight(TreeNode<T> root) {
-	    // FIXME: fill in the update code
+		if (root.right!=null && root.left!=null) {	
+			root.height = Math.max(root.right.height,root.left.height)+1;
+		}
+		else if (root.right==null&& root.left!=null) {
+			root.height = root.left.height+1;
+		}
+		else if (root.left==null&& root.right!=null) {
+			root.height = root.right.height+1;
+		}
+		else 
+			root.height=0;
+		// if one is null, height is other +1
 	}
 
 	//
@@ -230,8 +243,20 @@ public class AVLTree<T extends Comparable<T>> {
 	// (right subtree height - left subtree height)
 	//
 	private int getBalance(TreeNode<T> root) {
-	    // FIXME: fill in the balance computation
-	    return 0;
+		int right=0;
+		int left=0;
+		if (root.right==null) {
+			right = -1;
+		}
+		else right = root.right.height;
+		
+		if (root.left==null) {	
+			left = -1;
+		}
+		else left = root.left.height;
+		
+	    int balance = right - left;
+	    return balance;
 	}
 
 	//
@@ -243,8 +268,26 @@ public class AVLTree<T extends Comparable<T>> {
 	// RETURNS: the root of the subtree after rebalancing
 	//
 	private TreeNode<T> rebalance(TreeNode<T> root) {
-	    // FIXME: fill in the rebalancing code
-	    return null;
+		//TreeNode<T> a = root;
+	    if (getBalance(root) < -1 ) {	
+	    	if (getBalance(root.left) >= 1) {
+	    		root.setLeft(leftRotate(root.left));
+	    		updateHeight(root);
+	    	}
+	    	return(rightRotate(root));
+	    	//updateHeight(root);
+	    	//a= root.left.right;
+	    }
+	    else if (getBalance(root) > 1 ) {
+	    	if (getBalance(root.right) <= -1) {
+	    		root.setRight(rightRotate(root.right));
+	    		updateHeight(root);
+	    	}
+	    	return(leftRotate(root));
+	    	//updateHeight(root);
+	    	//a = root.right.left;
+	    }
+	    else return root;
 	}
 	
 	//
@@ -255,11 +298,22 @@ public class AVLTree<T extends Comparable<T>> {
 	// RETURNS: the new root after rotation.
 	//
 	private TreeNode<T> rightRotate(TreeNode<T> root) {
-	    // FIXME: fill in the rotation code
-	    return null;
+		
+			TreeNode<T>leftChild = root.left;
+			
+				TreeNode<T> target = leftChild.right;
+			    leftChild.setRight(root);
+				root.setLeft(target);
+				//updateHeight(target);
+				updateHeight(root);
+				updateHeight(leftChild);
+				return leftChild;
+			
+		
+	   
 	}
 
-	//
+	// 
 	// leftRotate()
 	// Perform a left rotation on a tree rooted at "root"
 	// The tree's root is assumed to have a right child.
@@ -267,8 +321,13 @@ public class AVLTree<T extends Comparable<T>> {
 	// RETURNS: the new root after rotation.
 	//
 	private TreeNode<T> leftRotate(TreeNode<T> root) {
-	    // FIXME: fill in the rotation code
-	    return null;
+		TreeNode<T> rightChild = root.right;
+	    TreeNode<T> target = rightChild.left;
+		rightChild.setLeft(root);
+		root.setRight(target);
+		updateHeight(root);
+		updateHeight(rightChild);
+		return rightChild;
 	}
 	
 	/////////////////////////////////////////////////////////////
