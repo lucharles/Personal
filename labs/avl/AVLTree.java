@@ -269,7 +269,7 @@ public class AVLTree<T extends Comparable<T>> {
 	//
 	private TreeNode<T> rebalance(TreeNode<T> root) {
 		//TreeNode<T> a = root;
-	    if (getBalance(root) < -1 ) {	
+	    if (getBalance(root) <= -2 ) {	
 	    	if (getBalance(root.left) >= 1) {
 	    		root.setLeft(leftRotate(root.left));
 	    		updateHeight(root);
@@ -278,7 +278,7 @@ public class AVLTree<T extends Comparable<T>> {
 	    	//updateHeight(root);
 	    	//a= root.left.right;
 	    }
-	    else if (getBalance(root) > 1 ) {
+	    else if (getBalance(root) >= 2 ) {
 	    	if (getBalance(root.right) <= -1) {
 	    		root.setRight(rightRotate(root.right));
 	    		updateHeight(root);
