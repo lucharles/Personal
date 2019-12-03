@@ -100,6 +100,22 @@ public class ShortestPaths {
     	// recording the parent edges of each vertex in parentEdges.
     	// FIXME
     	//
+    	while (!pq.isEmpty()) {
+    		VertexAndDist FirstPath = pq.extractMin();
+    		for(Edge e: FirstPath.vertex.edgesFrom()) {
+    			Decreaser<VertexAndDist> nextDec = handles.get(e.to);
+    			int original=nextDec.getValue().distance;
+    			int potential = weights.get(e)+ FirstPath.distance;
+    			
+    			if(potential <original ) {
+    				parentEdges.put(nextDec.getValue().vertex, e);
+    				VertexAndDist nvd = new VertexAndDist (nextDec.getValue().vertex, weights.get(e)+ FirstPath.distance);
+    				nextDec.decrease(nvd);
+    				handles.put(e.to, nextDec);
+    			}
+    		}
+    	}
+    	
     }
     
     
@@ -112,7 +128,9 @@ public class ShortestPaths {
     //
     public LinkedList<Edge> returnPath(Vertex endVertex) {
     	LinkedList<Edge> path = new LinkedList<Edge>();
-	
+    	for(Vertex to=endVertex; to!=startVertex; to=parentEdges.get(to).from){
+			path.addFirst(parentEdges.get(to));
+		}
     	//
     	// FIXME: implement this using the parent edges computed in run()
     	//
